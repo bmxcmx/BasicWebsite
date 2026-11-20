@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An educational exploration of why the Industrial Revolution emerged in Britain in the eighteenth century.">
+<title>Beyond Invention | Why Industrialization Emerged in Britain</title>
+<style>
+:root{
+  --ink:#172b3a;--muted:#526575;--paper:#f5f4ef;--white:#fff;
+  --blue:#174b69;--blue2:#246d8b;--teal:#8db9b0;--gold:#e4b45f;
+  --rust:#bd6848;--line:#d8dedb;--pale:#e8efec;--shadow:0 14px 40px rgba(18,43,58,.09);
+  --serif:Georgia,"Times New Roman",serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}
+a{color:var(--blue2)}button{font:inherit}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(245,244,239,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:0 26px;min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:.86rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);text-decoration:none;white-space:nowrap}
+.navlinks{display:flex;gap:22px;align-items:center}.navlinks a{font-size:.82rem;font-weight:650;text-decoration:none;color:var(--muted)}.navlinks a:hover{color:var(--rust)}
+.menu{display:none;border:1px solid var(--line);background:white;border-radius:8px;padding:8px 12px;color:var(--ink)}
+.hero{background:var(--blue);color:white;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-130px;top:-250px;box-shadow:0 0 0 55px rgba(255,255,255,.035),0 0 0 110px rgba(255,255,255,.025)}
+.hero-inner{max-width:1180px;margin:auto;padding:105px 26px 92px;position:relative;z-index:1}
+.kicker{font-size:.75rem;letter-spacing:.19em;text-transform:uppercase;font-weight:800;color:var(--gold)}
+h1{font-family:var(--serif);font-size:clamp(3.2rem,7vw,6.5rem);line-height:.98;letter-spacing:-.045em;max-width:900px;margin:22px 0}
+.hero p{font-size:1.15rem;max-width:690px;color:#d9e6e9;margin:26px 0 32px}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;color:#b8d0d6;font-size:.82rem}
+.hero-meta span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin:0 9px 1px 0}
+.btn{display:inline-block;padding:13px 19px;border-radius:3px;background:var(--gold);color:#1c303a;text-decoration:none;font-weight:800;font-size:.88rem}
+.btn:hover{background:#f0c97f}
+main{max-width:1180px;margin:auto;padding:0 26px}
+.intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:65px;padding:85px 0 75px;align-items:center}
+.section-tag{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:850}
+h2{font-family:var(--serif);font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.08;letter-spacing:-.025em;margin:12px 0 20px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:710px}
+.callout{background:var(--white);padding:30px;border-left:4px solid var(--gold);box-shadow:var(--shadow)}
+.callout strong{display:block;font-family:var(--serif);font-size:1.55rem;line-height:1.25;margin-bottom:12px}
+.callout p{margin:0;color:var(--muted)}
+.section{padding:76px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:34px}
+.section-head p{max-width:430px;color:var(--muted);margin:0}
+.number{font-family:var(--serif);font-size:3.8rem;color:#c4d3ce;line-height:1}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--white);padding:25px;border:1px solid #e3e7e3;min-height:220px;box-shadow:0 5px 20px rgba(18,43,58,.035)}
+.card .small{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rust);font-weight:850}
+.card h3{font-family:var(--serif);font-size:1.55rem;line-height:1.15;margin:12px 0}
+.card p{color:var(--muted);font-size:.94rem;margin-bottom:0}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:30px}
+.illustration{background:#e4ece8;min-height:300px;padding:30px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.illustration svg{width:100%;max-width:460px;height:auto}
+.caption{font-size:.78rem;color:var(--muted);margin-top:10px}
+.fact{padding:27px 0;border-bottom:1px solid var(--line)}
+.fact h3{font-family:var(--serif);font-size:1.7rem;margin:0 0 9px}
+.fact p{color:var(--muted);margin:0}
+.dark-band{background:#183b4d;color:white;margin:30px calc((1180px - 100vw)/2) 0;padding:68px max(26px,calc((100vw - 1128px)/2))}
+.dark-band h2{max-width:720px}.dark-band p{color:#d1e0e2;max-width:800px}
+.conditions{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.condition{border-top:2px solid var(--gold);padding:17px 12px 0 0}
+.condition b{display:block;font-family:var(--serif);font-size:1.25rem;margin-bottom:7px}
+.condition span{font-size:.86rem;color:#c9d9dc}
+.chart-wrap{background:white;padding:28px;border:1px solid var(--line);margin-top:28px}
+.chart-title{font-weight:800;margin:0 0 5px}.chart-sub{font-size:.82rem;color:var(--muted);margin:0 0 25px}
+.bar-row{display:grid;grid-template-columns:155px 1fr 48px;gap:12px;align-items:center;margin:17px 0;font-size:.86rem}
+.bar-track{height:13px;background:#e8eeeb;border-radius:20px;overflow:hidden}.bar{height:100%;background:var(--blue2);border-radius:20px}.bar.gold{background:var(--gold)}.bar.rust{background:var(--rust)}
+.note{font-size:.78rem;color:var(--muted);margin-top:18px}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:32px}
+.time-item{padding:20px 18px 10px 0;border-top:2px solid var(--teal);position:relative}
+.time-item:before{content:"";position:absolute;width:10px;height:10px;background:var(--rust);border-radius:50%;top:-6px;left:0}
+.time-item b{display:block;color:var(--rust);font-size:.8rem;letter-spacing:.08em}
+.time-item h3{font-family:var(--serif);font-size:1.35rem;margin:8px 0}
+.time-item p{font-size:.87rem;color:var(--muted);margin:0}
+.quote{font-family:var(--serif);font-size:1.6rem;line-height:1.35;border-left:3px solid var(--gold);padding:8px 0 8px 24px;margin:25px 0;color:var(--blue)}
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.compare-box{padding:26px;background:white;border:1px solid var(--line)}
+.compare-box h3{font-family:var(--serif);font-size:1.5rem;margin:0 0 10px}
+.compare-box p{color:var(--muted);font-size:.92rem}
+.stat{font-family:var(--serif);font-size:4.5rem;line-height:1;color:var(--rust);margin:14px 0 5px}
+.sources{columns:2;column-gap:45px;padding-left:20px}.sources li{break-inside:avoid;margin:0 0 13px;color:var(--muted);font-size:.85rem}
+footer{background:#102c3b;color:#c8d9dd;margin-top:50px;padding:40px 26px}
+.footer-inner{max-width:1128px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer strong{color:white}footer p{margin:5px 0;font-size:.82rem}
+.backtop{color:var(--gold);text-decoration:none;font-weight:700}
+@media(max-width:800px){
+ .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:18px 26px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+ .navlinks.open{display:flex}.menu{display:block}
+ .intro-grid,.feature{grid-template-columns:1fr;gap:25px}.cards{grid-template-columns:1fr}.conditions{grid-template-columns:1fr 1fr}
+ .section-head{display:block}.section-head p{margin-top:14px}.timeline{grid-template-columns:1fr 1fr;row-gap:15px}
+ .comparison{grid-template-columns:1fr}.sources{columns:1}
+ .dark-band{margin-left:-26px;margin-right:-26px;padding:55px 26px}
+}
+@media(max-width:480px){.hero-inner{padding:78px 22px 65px}main{padding:0 22px}.conditions{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.bar-row{grid-template-columns:105px 1fr 38px;font-size:.78rem}.nav{padding:0 22px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <nav class="nav" aria-label="Main navigation">
+  <a class="brand" href="#top">Beyond Invention</a>
+  <div class="navlinks" id="navlinks">
+   <a href="#technology">Technology</a><a href="#conditions">Conditions</a><a href="#people">People &amp; labor</a><a href="#comparison">Modern comparison</a><a href="#sources">Sources</a>
+  </div>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu</button>
+ </nav>
+</header>
+<section class="hero" id="top">
+ <div class="hero-inner">
+  <div class="kicker">An inquiry into the Industrial Revolution</div>
+  <h1>Why Britain?<br>Why the 18th century?</h1>
+  <p>Mechanical ideas existed long before industrialization. So what changed? Explore how economics, energy, knowledge, trade, and labor combined to make large-scale industrial production possible in Britain.</p>
+  <a class="btn" href="#question">Explore the argument ↓</a>
+  <div class="hero-meta" style="margin-top:35px"><span>History</span><span>Economics</span><span>Technology &amp; society</span></div>
+ </div>
+</section>
+<main>
+<section class="intro-grid" id="question">
+ <div>
+  <div class="section-tag">The central question</div>
+  <h2>An invention is not the same thing as a revolution.</h2>
+  <p class="lead">The Industrial Revolution transformed how goods were made. Production increasingly depended on machinery, factories, and new sources of energy instead of mainly human and animal labor. But many mechanical ideas had existed for centuries.</p>
+  <p>Ancient societies understood gears, pumps, and other mechanical systems. Steam-powered devices had even been demonstrated in the ancient world. The important question is not simply who imagined a machine first, but why a society would develop it, invest in it, and use it widely.</p>
+ </div>
+ <aside class="callout">
+  <strong>“Technology alone did not cause the Industrial Revolution.”</strong>
+  <p>Britain's transformation depended on a combination of economic incentives, accessible energy, practical knowledge, international trade, and social conditions.</p>
+ </aside>
+</section>
+
+<section class="section" id="technology">
+ <div class="section-head">
+  <div><div class="section-tag">01 / Before industrialization</div><h2>Technology existed.<br>Mass adoption did not.</h2></div>
+  <p>Earlier inventions show that technical knowledge by itself does not guarantee widespread use. A device also needs a purpose, resources, and an economic reason to be developed.</p>
+ </div>
+ <div class="feature">
+  <div class="illustration" aria-label="Simplified illustration of an ancient aeolipile steam device">
+   <svg viewBox="0 0 500 300" role="img" aria-labelledby="steamTitle">
+    <title id="steamTitle">A simplified aeolipile steam device</title>
+    <path d="M170 245h160M195 245v-20h110v20" fill="none" stroke="#174b69" stroke-width="8" stroke-linecap="round"/>
+    <path d="M220 220v-72q0-28 30-28t30 28v72" fill="#8db9b0" stroke="#174b69" stroke-width="6"/>
+    <path d="M205 145h90" stroke="#174b69" stroke-width="7" stroke-linecap="round"/>
+    <path d="M250 120V82" stroke="#174b69" stroke-width="7" stroke-linecap="round"/>
+    <path d="M250 82q-54-25-40-62M250 82q54-25 40-62" fill="none" stroke="#bd6848" stroke-width="7" stroke-linecap="round"/>
+    <path d="M210 20l-2 18 18-8M290 20l2 18-18-8" fill="none" stroke="#bd6848" stroke-width="5"/>
+    <path d="M175 270h150" stroke="#e4b45f" stroke-width="5" stroke-linecap="round"/>
+    <text x="250" y="293" text-anchor="middle" font-size="13" fill="#526575">Simplified concept illustration</text>
+   </svg>
+  </div>
+  <div>
+   <div class="section-tag">An ancient example</div>
+   <h3 style="font-family:var(--serif);font-size:2rem;margin:8px 0">Hero of Alexandria's aeolipile</h3>
+   <p>Jan Haugland's article describes the aeolipile, an ancient device that rotated using steam. Roman society also had knowledge of gears, cylinders, valves, mining, and water-powered machinery.</p>
+   <p>The aeolipile demonstrated that steam could produce motion. But demonstrating a principle is different from creating an economical system that uses it to power production on a large scale.</p>
+   <p class="caption">The drawing is a simplified educational illustration, not a technical reconstruction.</p>
+  </div>
+ </div>
+ <div class="callout" style="margin-top:32px">
+  <strong>Possibility is not adoption.</strong>
+  <p>The Roman example helps distinguish between knowing that something can work and having the demand, resources, and institutions to make it widely useful. Haugland's article is speculative, so it is best used as a comparison rather than proof of what Rome would have achieved.</p>
+ </div>
+</section>
+
+<section class="section" id="conditions">
+ <div class="section-head">
+  <div><div class="section-tag">02 / Why Britain?</div><h2>The conditions that made machines worthwhile</h2></div>
+  <p>Britain's industrial growth was not caused by one isolated advantage. Several conditions reinforced one another.</p>
+ </div>
+ <div class="cards">
+  <article class="card"><div class="small">Economic incentives</div><h3>High wages</h3><p>Relatively high wages gave manufacturers a financial reason to look for machines that could perform work with less human labor.</p></article>
+  <article class="card"><div class="small">Energy resources</div><h3>Affordable coal</h3><p>Coal provided energy beyond the limits of yearly plant growth and helped make operating machinery more practical.</p></article>
+  <article class="card"><div class="small">Practical knowledge</div><h3>Skilled workers</h3><p>Engineers, instrument-makers, millwrights, and apprentices could turn designs into equipment that worked and could be repaired.</p></article>
+ </div>
+ <div class="chart-wrap">
+  <p class="chart-title">How the factors worked together</p>
+  <div class="bar-row"><span>High wages</span><div class="bar-track"><div class="bar" style="width:88%"></div></div><b>Push</b></div>
+  <div class="bar-row"><span>Affordable energy</span><div class="bar-track"><div class="bar gold" style="width:82%"></div></div><b>Enable</b></div>
+  <div class="bar-row"><span>Technical skills</span><div class="bar-track"><div class="bar rust" style="width:78%"></div></div><b>Build</b></div>
+  <div class="bar-row"><span>Markets &amp; trade</span><div class="bar-track"><div class="bar" style="width:90%"></div></div><b>Expand</b></div>
+  <p class="note">The bar lengths are visual emphasis only; they do not represent measured quantities or rank the historical importance of each factor.</p>
+ </div>
+ <div class="feature">
+  <div>
+   <div class="section-tag">Energy transition</div>
+   <h3 style="font-family:var(--serif);font-size:2rem;margin:8px 0">From an organic economy to fossil energy</h3>
+   <p>E. A. Wrigley explains that preindustrial economies relied heavily on energy from plants, animals, and human labor. These sources were limited by land and agricultural production.</p>
+   <p>Coal offered access to energy accumulated over geological time. It did not cause industrialization on its own; its importance came from how it worked together with Britain's economy, industries, and technology.</p>
+  </div>
+  <div class="illustration">
+   <svg viewBox="0 0 480 260" role="img" aria-label="Diagram comparing organic energy sources and coal">
+    <g fill="none" stroke="#174b69" stroke-width="4">
+     <circle cx="100" cy="75" r="30" fill="#8db9b0"/><path d="M100 105v55M72 160h56M100 160l-22 40M100 160l22 40"/>
+     <path d="M70 75q30-52 60 0" stroke="#bd6848"/>
+     <path d="M155 110h70m-14-14 14 14-14 14" stroke="#bd6848"/>
+     <path d="M295 165l25-70 25 70z" fill="#526575"/><path d="M285 165h75" />
+     <path d="M320 95q-20-30 0-48 20 18 0 48" stroke="#bd6848"/>
+    </g>
+    <g fill="#174b69" font-size="14" font-weight="700" text-anchor="middle"><text x="100" y="230">Organic energy</text><text x="320" y="230">Coal</text></g>
+    <g fill="#526575" font-size="11" text-anchor="middle"><text x="100" y="248">Plants • animals • people</text><text x="320" y="248">Stored fossil energy</text></g>
+   </svg>
+  </div>
+ </div>
+ <div class="dark-band">
+  <div class="section-tag" style="color:var(--gold)">The combination matters</div>
+  <h2>Machines needed more than inventors.</h2>
+  <p>Robert C. Allen emphasizes wages, energy prices, and commerce. E. A. Wrigley explains the limits of earlier energy systems. Joel Mokyr highlights useful knowledge, institutions, and skilled workers. Together, these explanations show why industrialization depended on connected conditions.</p>
+  <div class="conditions">
+   <div class="condition"><b>Incentive</b><span>Manufacturers had reasons to invest in labor-saving machinery.</span></div>
+   <div class="condition"><b>Power</b><span>Energy resources made machinery practical to operate.</span></div>
+   <div class="condition"><b>Capability</b><span>Skilled workers could build, repair, and improve equipment.</span></div>
+   <div class="condition"><b>Demand</b><span>Trade and markets created opportunities to expand production.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="trade">
+ <div class="section-head">
+  <div><div class="section-tag">03 / Trade and expansion</div><h2>Industrial growth had a global context</h2></div>
+  <p>Britain's industrial development was connected to international commerce, imperial expansion, colonial markets, and unequal systems of labor.</p>
+ </div>
+ <div class="feature">
+  <div>
+   <h3 style="font-family:var(--serif);font-size:2rem;margin:0 0 12px">Cotton, commerce, and slavery</h3>
+   <p>International trade provided access to materials and markets. Competition also encouraged manufacturers to improve production. Cotton textiles became one of the central industries transformed by mechanization.</p>
+   <p>Joseph E. Inikori connects the Atlantic economy—including commodities produced by enslaved Africans—to the structural transformation of Western European economies and Britain's industrial development. Thomas E. Lambert also examines the relationship between the slave trade and industrial growth.</p>
+  </div>
+  <aside class="callout">
+   <strong>Growth did not mean shared benefits.</strong>
+   <p>Enslaved labor produced commodities that entered international trade. The expansion of manufacturing created opportunities for some while depending partly on exploitation and unequal distributions of wealth and labor.</p>
+  </aside>
+ </div>
+ <div class="timeline" aria-label="A simplified sequence of connected developments">
+  <div class="time-item"><b>KNOWLEDGE</b><h3>Technical ideas</h3><p>Mechanical knowledge and experiments existed before industrialization.</p></div>
+  <div class="time-item"><b>CONDITIONS</b><h3>Economic incentives</h3><p>Wages, energy costs, and markets made investment in machinery attractive.</p></div>
+  <div class="time-item"><b>PRODUCTION</b><h3>Mechanization</h3><p>Skilled workers and manufacturers developed and applied machinery.</p></div>
+  <div class="time-item"><b>CONSEQUENCES</b><h3>Expansion</h3><p>Industrial production grew through trade networks and unequal labor systems.</p></div>
+ </div>
+</section>
+
+<section class="section" id="people">
+ <div class="section-head">
+  <div><div class="section-tag">04 / People and labor</div><h2>Who experienced industrialization?</h2></div>
+  <p>Industrialization changed more than machines and output. It changed where people worked, how their time was organized, and who controlled production.</p>
+ </div>
+ <div class="cards">
+  <article class="card"><div class="small">Workplace</div><h3>From homes to factories</h3><p>Workers who had made goods in homes or small workshops increasingly became part of factory systems.</p></article>
+  <article class="card"><div class="small">Control</div><h3>Labor and capital</h3><p>Employers controlled machinery and working conditions, changing relationships between workers and manufacturers.</p></article>
+  <article class="card"><div class="small">Unequal effects</div><h3>Different experiences</h3><p>Industrialization created employment opportunities, but also harsh working environments and conflicts over labor.</p></article>
+ </div>
+ <blockquote class="quote">Industrialization was not experienced in the same way by everyone. Its effects depended on people's roles within changing systems of production.</blockquote>
+ <p>Pat Hudson describes how steam power concentrated workers in particular locations and contributed to new relationships between labor and capital. Jennifer Lee Goloboy's collection also draws attention to artisans, women workers, enslaved people, manufacturers, and consumers. Looking at these experiences makes the social consequences of industrialization part of the explanation—not an afterthought.</p>
+</section>
+
+<section class="section" id="comparison">
+ <div class="section-head">
+  <div><div class="section-tag">05 / A modern comparison</div><h2>Technology can wait decades for adoption</h2></div>
+  <p>Artificial intelligence offers a modern example of the difference between the existence of a technology and its widespread use.</p>
+ </div>
+ <div class="comparison">
+  <article class="compare-box">
+   <div class="section-tag">Artificial intelligence</div><h3>Research came first</h3>
+   <p>AI research dates back to the 1950s, when researchers at Dartmouth helped establish it as a formal field. Its everyday reach expanded much later, as infrastructure, accessibility, investment, and practical applications developed.</p>
+  </article>
+  <article class="compare-box">
+   <div class="section-tag">Stanford AI Index 2026</div><div class="stat">53%</div>
+   <h3>Generative AI adoption</h3>
+   <p>Reports that generative AI reached approximately 53% adoption within three years of its mass-market introduction, identified with the release of ChatGPT in 2022.</p>
+   <p class="note">This statistic is presented as reported in the Stanford HAI 2026 AI Index Report; it is a modern comparison, not a direct equivalence with industrialization.</p>
+  </article>
+ </div>
+ <div class="callout" style="margin-top:22px">
+  <strong>The comparison is about adoption, not identical histories.</strong>
+  <p>AI and industrial machinery developed under very different circumstances. The useful parallel is that a technology can exist for years before the infrastructure, investment, accessibility, and applications needed for widespread use are in place.</p>
+ </div>
+</section>
+
+<section class="section" id="conclusion">
+ <div class="section-tag">The takeaway</div>
+ <h2>Industrialization happened when circumstances aligned.</h2>
+ <p class="lead">Britain's Industrial Revolution was not simply the result of someone finally inventing the right machine. It emerged from a particular combination of high wages, inexpensive energy, technical knowledge, international trade, and social conditions.</p>
+ <p>Cheap energy was less useful without machinery capable of using it. Machinery was less attractive without financial incentives and markets. Manufacturers also needed workers, materials, and the knowledge to operate and improve equipment. These conditions reinforced one another, allowing production to expand beyond the limits of traditional labor and agriculture.</p>
+ <div class="quote">The key question is not only why earlier societies did not invent the right machines, but why Britain developed the environment in which machines could transform an entire economy.</div>
+</section>
+
+<section class="section" id="sources">
+ <div class="section-tag">Further reading</div><h2>Sources &amp; research</h2>
+ <p class="lead">Use these sources to explore the historical debate in greater depth.</p>
+ <ol class="sources">
+  <li>Allen, R. C. “Why the Industrial Revolution Was British: Commerce, Induced Invention, and the Scientific Revolution.” <i>The Economic History Review</i>, vol. 64, no. 2, 2011, pp. 357–84. <a href="https://doi.org/10.1111/j.1468-0289.2010.00532.x" target="_blank" rel="noopener">Read source</a>.</li>
+  <li>Haugland, Jan. “Could Rome Have Invented the Steam Engine?” <i>Medium</i>, 17 Nov. 2013. <a href="https://medium.com/not-be-condemned-to-repeat-it/could-rome-have-invented-the-steam-engine-7a3b03d6b37f" target="_blank" rel="noopener">Read source</a>.</li>
+  <li>Hudson, Pat. <i>The Industrial Revolution</i>. Bloomsbury Publishing, 2009.</li>
+  <li>Inikori, Joseph E. “Atlantic Slavery and the Rise of the Capitalist Global Economy.” <i>Current Anthropology</i>, vol. 61, no. S22, 2020, pp. S159–71. <a href="https://doi.org/10.1086/709818" target="_blank" rel="noopener">Read source</a>.</li>
+  <li>Inikori, Joseph. “Slavery and the Revolution in Cotton Textile Production in England.” <i>The Atlantic Slave Trade</i>, Duke University Press, 2020, pp. 145–82. <a href="https://doi.org/10.1515/9780822382379-007" target="_blank" rel="noopener">Read source</a>.</li>
+  <li>Lambert, Thomas E. “The Slave Trade and the Industrial Revolution Debate: A Look at the Numbers.” <i>Monthly Review</i>, vol. 77, no. 9, 2026, pp. 12–26. <a href="https://doi.org/10.14452/MR-077-09-2026-02_2" target="_blank" rel="noopener">Read source</a>.</li>
+  <li>Mokyr, Joel. “‘The Holy Land of Industrialism’: Rethinking the Industrial Revolution.” <i>Journal of the British Academy</i>, vol. 9, 2021, pp. 223–47. <a href="https://doi.org/10.5871/jba/009.223" target="_blank" rel="noopener">Read source</a>.</li>
+  <li>Stearns, Peter N. <i>Debating the Industrial Revolution</i>. 1st ed., Bloomsbury, 2015.</li>
+  <li>Stanford Institute for Human-Centered Artificial Intelligence. <i>The 2026 AI Index Report</i>. Stanford University, 2026. <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noopener">Read report</a>.</li>
+  <li>Wrigley, E. A. “Energy and the English Industrial Revolution.” <i>Philosophical Transactions of the Royal Society A</i>, vol. 371, no. 1986, 2013. <a href="https://doi.org/10.1098/rsta.2011.0568" target="_blank" rel="noopener">Read source</a>.</li>
+ </ol>
+</section>
+</main>
+<footer>
+ <div class="footer-inner">
+  <div><strong>Beyond Invention</strong><p>An educational adaptation of an inquiry into Britain's Industrial Revolution.</p><p>Created for ENGL 1030 · Caden Whitfield</p></div>
+  <a class="backtop" href="#top">Back to top ↑</a>
+ </div>
+</footer>
+<script>
+const menu=document.getElementById('menu');
+const links=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{
+ const open=links.classList.toggle('open');
+ menu.setAttribute('aria-expanded',String(open));
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+ links.classList.remove('open');menu.setAttribute('aria-expanded','false');
+}));
+</script>
+</body>
+</html>
