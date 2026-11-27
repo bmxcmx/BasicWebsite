@@ -49,6 +49,9 @@ h2{font-family:var(--serif);font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.08;
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:30px}
 .illustration{background:#e4ece8;min-height:300px;padding:30px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .illustration svg{width:100%;max-width:460px;height:auto}
+.illustration img{display:block;width:100%;max-height:380px;height:auto;object-fit:contain}
+.image-illustration{flex-direction:column;gap:8px}
+.image-illustration figcaption{align-self:flex-start}
 .caption{font-size:.78rem;color:var(--muted);margin-top:10px}
 .fact{padding:27px 0;border-bottom:1px solid var(--line)}
 .fact h3{font-family:var(--serif);font-size:1.7rem;margin:0 0 9px}
@@ -117,7 +120,7 @@ footer strong{color:white}footer p{margin:5px 0;font-size:.82rem}
   <div class="section-tag">The central question</div>
   <h2>An invention is not the same thing as a revolution.</h2>
   <p class="lead">The Industrial Revolution transformed how goods were made. Production increasingly depended on machinery, factories, and new sources of energy instead of mainly human and animal labor. But many mechanical ideas had existed for centuries.</p>
-  <p>Ancient societies understood gears, pumps, and other mechanical systems. Steam-powered devices had even been demonstrated in the ancient world. The important question is not simply who imagined a machine first, but why a society would develop it, invest in it, and use it widely.</p>
+  <p>Ancient societies understood gears, pumps, and other mechanical systems. Steam-powered devices had even been demonstrated in the ancient world. The question is not who imagined a machine first, but why a society would develop it, invest in it, and use it widely.</p>
  </div>
  <aside class="callout">
   <strong>“Technology alone did not cause the Industrial Revolution.”</strong>
@@ -131,25 +134,15 @@ footer strong{color:white}footer p{margin:5px 0;font-size:.82rem}
   <p>Earlier inventions show that technical knowledge by itself does not guarantee widespread use. A device also needs a purpose, resources, and an economic reason to be developed.</p>
  </div>
  <div class="feature">
-  <div class="illustration" aria-label="Simplified illustration of an ancient aeolipile steam device">
-   <svg viewBox="0 0 500 300" role="img" aria-labelledby="steamTitle">
-    <title id="steamTitle">A simplified aeolipile steam device</title>
-    <path d="M170 245h160M195 245v-20h110v20" fill="none" stroke="#174b69" stroke-width="8" stroke-linecap="round"/>
-    <path d="M220 220v-72q0-28 30-28t30 28v72" fill="#8db9b0" stroke="#174b69" stroke-width="6"/>
-    <path d="M205 145h90" stroke="#174b69" stroke-width="7" stroke-linecap="round"/>
-    <path d="M250 120V82" stroke="#174b69" stroke-width="7" stroke-linecap="round"/>
-    <path d="M250 82q-54-25-40-62M250 82q54-25 40-62" fill="none" stroke="#bd6848" stroke-width="7" stroke-linecap="round"/>
-    <path d="M210 20l-2 18 18-8M290 20l2 18-18-8" fill="none" stroke="#bd6848" stroke-width="5"/>
-    <path d="M175 270h150" stroke="#e4b45f" stroke-width="5" stroke-linecap="round"/>
-    <text x="250" y="293" text-anchor="middle" font-size="13" fill="#526575">Simplified concept illustration</text>
-   </svg>
-  </div>
+  <figure class="illustration image-illustration">
+   <img src="assets/aeolipile.png" alt="Historical technical illustration of Heron's aeolipile, showing the heated kettle, steam tubes, pivoting sphere, and directional nozzles">
+   <figcaption class="caption">Image source: <a href="https://www.popularmechanics.com/science/energy/a34554479/heron-aeolipile/" target="_blank" rel="noopener">Popular Mechanics — Heron's Aeolipile</a>.</figcaption>
+  </figure>
   <div>
    <div class="section-tag">An ancient example</div>
    <h3 style="font-family:var(--serif);font-size:2rem;margin:8px 0">Hero of Alexandria's aeolipile</h3>
    <p>Jan Haugland's article describes the aeolipile, an ancient device that rotated using steam. Roman society also had knowledge of gears, cylinders, valves, mining, and water-powered machinery.</p>
    <p>The aeolipile demonstrated that steam could produce motion. But demonstrating a principle is different from creating an economical system that uses it to power production on a large scale.</p>
-   <p class="caption">The drawing is a simplified educational illustration, not a technical reconstruction.</p>
   </div>
  </div>
  <div class="callout" style="margin-top:32px">
@@ -168,14 +161,6 @@ footer strong{color:white}footer p{margin:5px 0;font-size:.82rem}
   <article class="card"><div class="small">Energy resources</div><h3>Affordable coal</h3><p>Coal provided energy beyond the limits of yearly plant growth and helped make operating machinery more practical.</p></article>
   <article class="card"><div class="small">Practical knowledge</div><h3>Skilled workers</h3><p>Engineers, instrument-makers, millwrights, and apprentices could turn designs into equipment that worked and could be repaired.</p></article>
  </div>
- <div class="chart-wrap">
-  <p class="chart-title">How the factors worked together</p>
-  <div class="bar-row"><span>High wages</span><div class="bar-track"><div class="bar" style="width:88%"></div></div><b>Push</b></div>
-  <div class="bar-row"><span>Affordable energy</span><div class="bar-track"><div class="bar gold" style="width:82%"></div></div><b>Enable</b></div>
-  <div class="bar-row"><span>Technical skills</span><div class="bar-track"><div class="bar rust" style="width:78%"></div></div><b>Build</b></div>
-  <div class="bar-row"><span>Markets &amp; trade</span><div class="bar-track"><div class="bar" style="width:90%"></div></div><b>Expand</b></div>
-  <p class="note">The bar lengths are visual emphasis only; they do not represent measured quantities or rank the historical importance of each factor.</p>
- </div>
  <div class="feature">
   <div>
    <div class="section-tag">Energy transition</div>
@@ -183,19 +168,10 @@ footer strong{color:white}footer p{margin:5px 0;font-size:.82rem}
    <p>E. A. Wrigley explains that preindustrial economies relied heavily on energy from plants, animals, and human labor. These sources were limited by land and agricultural production.</p>
    <p>Coal offered access to energy accumulated over geological time. It did not cause industrialization on its own; its importance came from how it worked together with Britain's economy, industries, and technology.</p>
   </div>
-  <div class="illustration">
-   <svg viewBox="0 0 480 260" role="img" aria-label="Diagram comparing organic energy sources and coal">
-    <g fill="none" stroke="#174b69" stroke-width="4">
-     <circle cx="100" cy="75" r="30" fill="#8db9b0"/><path d="M100 105v55M72 160h56M100 160l-22 40M100 160l22 40"/>
-     <path d="M70 75q30-52 60 0" stroke="#bd6848"/>
-     <path d="M155 110h70m-14-14 14 14-14 14" stroke="#bd6848"/>
-     <path d="M295 165l25-70 25 70z" fill="#526575"/><path d="M285 165h75" />
-     <path d="M320 95q-20-30 0-48 20 18 0 48" stroke="#bd6848"/>
-    </g>
-    <g fill="#174b69" font-size="14" font-weight="700" text-anchor="middle"><text x="100" y="230">Organic energy</text><text x="320" y="230">Coal</text></g>
-    <g fill="#526575" font-size="11" text-anchor="middle"><text x="100" y="248">Plants • animals • people</text><text x="320" y="248">Stored fossil energy</text></g>
-   </svg>
-  </div>
+  <figure class="illustration image-illustration">
+   <img src="assets/energy-transitions.png" alt="Infographic titled The History of Energy Transitions, showing the changing use of traditional biomass, coal, and oil from 1800 onward">
+   <figcaption class="caption">Image source: <a href="https://www.visualcapitalist.com/visualizing-the-history-of-energy-transitions/" target="_blank" rel="noopener">Visual Capitalist — Visualizing the History of Energy Transitions</a>.</figcaption>
+  </figure>
  </div>
  <div class="dark-band">
   <div class="section-tag" style="color:var(--gold)">The combination matters</div>
@@ -276,7 +252,6 @@ footer strong{color:white}footer p{margin:5px 0;font-size:.82rem}
  <h2>Industrialization happened when circumstances aligned.</h2>
  <p class="lead">Britain's Industrial Revolution was not simply the result of someone finally inventing the right machine. It emerged from a particular combination of high wages, inexpensive energy, technical knowledge, international trade, and social conditions.</p>
  <p>Cheap energy was less useful without machinery capable of using it. Machinery was less attractive without financial incentives and markets. Manufacturers also needed workers, materials, and the knowledge to operate and improve equipment. These conditions reinforced one another, allowing production to expand beyond the limits of traditional labor and agriculture.</p>
- <div class="quote">The key question is not only why earlier societies did not invent the right machines, but why Britain developed the environment in which machines could transform an entire economy.</div>
 </section>
 
 <section class="section" id="sources">
